@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bottom-top: 20px;
+  --main-color: #333;
+  --height: 0px;
+  --vh-height: 0px;
+  --services-color-main: "";
+  --services-color-sub: "";
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222222;
+    --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-45 {
+    background: linear-gradient(-45deg, var(--pf-green), cornflowerblue);
+  }
+  .bg-aurora {
+    background: linear-gradient(-45deg, var(--pf-green), cornflowerblue);
+    @apply !bg-clip-text text-transparent;
+  }
+  @keyframes down {
+    0% {
+      height: 20vh;
+    }
+    50% {
+      height: 10vh;
+    }
+    100% {
+      height: 20vh;
+    }
+  }
+  @keyframes revealText {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+      border-right-width: 0;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: inherit;
+    &::before {
+      top: 0;
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      opacity: 0.1;
+      z-index: 1;
+    }
+  }
+  .card.hover {
+    transform: rotateY(180deg);
+  }
+}
+
+@layer base {
+  a {
+    @apply text-inherit no-underline;
+  }
+  @font-face {
+    font-family: "Recharge";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/recharge.woff") format("woff");
+  }
+  @font-face {
+    font-family: "montero";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/montero.regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: "blackjack";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/BLACKJAR.woff") format("woff");
+  }
+  @font-face {
+    font-family: "monotone";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/Monoton-Regular.woff") format("woff");
+  }
+}

@@ -1,0 +1,73 @@
+@mixin center() {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.hire {
+	background-color: white;
+    color: white;
+	@include center();
+	padding: 2rem;
+	.hire-widget {
+		height: 100%;
+		background-color: #20a8de;
+		width: 100%;
+		max-width: 1200px;
+		border-radius: 15px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		align-items: center;
+		justify-items: center;
+        padding: 2rem;
+		gap: 3rem;
+		.hire-icon {
+			border-radius: 15px;
+			width: 15vh;
+			@include center();
+			color: rgba(255, 255, 255, 0.555);
+			i {
+                font-size: 4rem;
+			}
+		}
+		.hire-text {
+			@include center();
+			flex-direction: column;
+			text-align: center;
+			h3 {
+				font-size: 2rem;
+                font-weight: bold;
+			}
+			p {
+				font-size: 1.2rem;
+			}
+		}
+        .hire-button {
+            width: 10rem;
+            height: 4rem;
+            appearance: none;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            background-color: rgba(255, 255, 255, 0.451);
+            border-radius: 15px;
+            color: white;
+            opacity: 0.8;
+            cursor: pointer;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+            transition: opacity 0.5s;
+            &:hover {
+                opacity: 1;
+            }
+        }
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	.hire-widget {
+		height: 40vh;
+	}
+}

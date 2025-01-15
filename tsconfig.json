@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "typeRoots": ["./node_modules/@types", "./server/types", "./client/types"],
+    "baseUrl": "./",
+    "paths": {
+      "utils": ["./client/utils"],
+      "assets": ["./client/assets"],
+      "context": ["./client/context"],
+      "pages": ["./client/pages"]
+    }
+  },
+  "include": ["client/**/*"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

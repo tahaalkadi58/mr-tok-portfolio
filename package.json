@@ -1,0 +1,55 @@
+{
+  "name": "react-ssr-vite-express",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "server/server.ts",
+  "prettier": {
+    "plugins": []
+  },
+  "scripts": {
+    "clean": "rimraf ./dist",
+    "dev": "nodemon .",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --ssr client/entry-server.tsx --outDir dist/server",
+    "preview": "cross-env NODE_ENV=production tsx --tsconfig ./tsconfig.node.json ."
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "compression": "^1.7.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.0.1",
+    "gsap": "^3.12.5",
+    "http-status-codes": "^2.3.0",
+    "immer": "^10.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.1",
+    "rellax": "^1.12.1",
+    "sirv": "^3.0.0",
+    "three": "^0.172.0"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/react-router-dom": "^5.3.3",
+    "@types/rellax": "^1.7.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "chart.js": "^4.4.7",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "sass": "^1.83.0",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.19.2",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.1",
+    "vite-plugin-svgr": "^4.3.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
