@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rimraf ./dist",
-    "dev": "nodemon .",
+    "dev": "nodemon",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr client/entry-server.tsx --outDir dist/server",

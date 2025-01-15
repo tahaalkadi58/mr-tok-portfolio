@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $dark-blue: #1e1b2d;
 $light-blue: #828092;
 $white: #fff;
@@ -67,7 +69,7 @@ $black: #000;
 		margin-top: 1.5rem;
 		transition: height 0.5s;
 		.project-card {
-			$text_black: lighten($black, 50%);
+			$text_black: color.adjust($black, $lightness: 50%);
 			background-color: $white;
 			position: relative;
 			overflow: hidden;

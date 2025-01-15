@@ -1,6 +1,7 @@
-@import './font-faces.scss';
-@import './font-size-standard.scss';
-@import './shared-rules.scss';
+@use './font-faces' as *;
+@use './font-size-standard' as *;
+@use './shared-rules' as *;
+
 
 // Variables
 

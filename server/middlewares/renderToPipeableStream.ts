@@ -34,14 +34,14 @@ export const renderToPipeableStream: Controller = async function (req, res) {
       template = await vite.transformIndexHtml(url, template);
       render = (await vite.ssrLoadModule("/client/entry-server.tsx")).render;
     } else {
-      template = templateHtml;
-      template = template.replace(/<!--\s*title\s*-->/, AppSSR.page);
-      template = template.replace(
+      templateHtml.replace(/<!--\s*title\s*-->/, AppSSR.page);
+      templateHtml.replace(
         /<!--\s*props\s*-->/,
         `<script>
             window.props = ${JSON.stringify(AppSSR)};
         </script>`,
       );
+      template = templateHtml
       // @ts-ignore
       render = (await import("../../dist/server/entry-server.js")).render;
     }
