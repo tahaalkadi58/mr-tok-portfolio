@@ -10,9 +10,8 @@ import WindowEventsProvider from './components/windowEventsContextProvider';
 import LibrariesWrapper from 'client/layout/LibrariesWrapper';
 import PathWrapper from 'client/layout/PathWrapper';
 import About from './components/about/About';
-import HireMe from './components/hire-me/HIreMe';
+import HireMe from './components/hire-me/HireMe';
 import { RepoProvider } from 'client/context/GithubContext';
-import IsServerContextProvider from './components/IsServerContextProvider';
 import ClientComponent from '../shared/ClientComponent';
 import { Iprops } from 'server/types/node';
 const Home: FunctionComponent <{props: Iprops}>= function ({props}) {
