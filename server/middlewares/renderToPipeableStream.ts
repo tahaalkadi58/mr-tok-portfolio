@@ -41,7 +41,6 @@ export const renderToPipeableStream: Controller = async function (req, res) {
           window.props = ${JSON.stringify(AppSSR)};
           </script>`,
       );
-      console.log(templateHtml.search(/<!--\s*title\s*-->/));
       template = templateHtml;
       render = // @ts-ignore
       (await import("../../dist/server/entry-server.js")).render;
