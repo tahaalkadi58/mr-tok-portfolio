@@ -3,17 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "server/server.ts",
+  "main": "server/startServer.ts",
   "prettier": {
     "plugins": []
   },
   "scripts": {
     "clean": "rimraf ./dist",
-    "dev": "nodemon",
+    "local:dev": "nodemon",
+    "dev": "node server/server.js",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr client/entry-server.tsx --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production tsx --tsconfig ./tsconfig.node.json ."
+    "local:preview": "cross-env NODE_ENV=production tsx --tsconfig ./tsconfig.node.json .",
+    "build:server:ts": "tsc -p ./tsconfig.node.json --outDir dist/express"
   },
   "dependencies": {
     "aos": "^2.3.4",

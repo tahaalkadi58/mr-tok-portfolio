@@ -12,8 +12,6 @@ import { __dirname } from "./utils/cjs-variables";
 config();
 
 export const isProduction = process.env.NODE_ENV === "production";
-const PORT = Number(process.env.PORT) || 3004;
-const hostname = process.env.HOSTNAME || "127.0.0.1";
 export const base = process.env.BASE || "/";
 const ABORT_DELAY = 10000;
 
@@ -56,6 +54,4 @@ app.get("*all", defaultController);
 
 app.use(errorLogger, errorHandlerMiddleware);
 
-app.listen(PORT, hostname, () => {
-  console.log(`Server is running on http://${hostname}:${+PORT}`);
-});
+
