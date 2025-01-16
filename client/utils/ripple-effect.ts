@@ -3,7 +3,7 @@ export default function createRipple(event: globalThis.MouseEvent) {
   const target = currentTarget as HTMLElement;
   const { top, left } = target.getBoundingClientRect();
   const circle = document.createElement("span");
-  circle.classList.add('ripple-span')
+  circle.classList.add("ripple-span");
   const diameter = Math.max(target.clientWidth, target.clientHeight);
   const radius = diameter / 2;
   const x = clientX - left;

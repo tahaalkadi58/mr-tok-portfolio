@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Express } from "express";
 import { renderToPipeableStream } from "./middlewares/renderToPipeableStream";
 import defaultController from "./controllers/default.controller";
 import type { ViteDevServer } from "vite";
@@ -17,7 +17,7 @@ const hostname = process.env.HOSTNAME || "127.0.0.1";
 export const base = process.env.BASE || "/";
 const ABORT_DELAY = 10000;
 
-const app = express();
+export const app: Express = express();
 
 app.use(
   express.static(path.join(__dirname, "public"), {
@@ -26,7 +26,6 @@ app.use(
   }),
 );
 
-/** @type {import('vite').ViteDevServer | undefined} */
 export let vite: ViteDevServer;
 if (!isProduction) {
   const { createServer } = await import("vite");

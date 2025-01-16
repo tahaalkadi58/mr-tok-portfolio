@@ -3,7 +3,6 @@ import scrollToSmoothly from "client/utils/smooth-scroll";
 import Logo from "./logo";
 export default function Hero() {
   return (
-
     <div
       className="hero"
       onClick={() => {

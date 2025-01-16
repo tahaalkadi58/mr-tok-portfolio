@@ -11,7 +11,7 @@ const ABORT_DELAY = 10000;
  */
 export const renderToPipeableStream: Controller = async function (req, res) {
   try {
-    const templateHtml = isProduction
+    let templateHtml = isProduction
       ? await fs.readFile("./dist/client/index.html", "utf-8")
       : "";
 
@@ -34,18 +34,18 @@ export const renderToPipeableStream: Controller = async function (req, res) {
       template = await vite.transformIndexHtml(url, template);
       render = (await vite.ssrLoadModule("/client/entry-server.tsx")).render;
     } else {
-      templateHtml.replace(/<!--\s*title\s*-->/, AppSSR.page);
-      templateHtml.replace(
+      templateHtml = templateHtml.replace(/<!--\s*title\s*-->/, AppSSR.page);
+      templateHtml = templateHtml.replace(
         /<!--\s*props\s*-->/,
         `<script>
-            window.props = ${JSON.stringify(AppSSR)};
-        </script>`,
+          window.props = ${JSON.stringify(AppSSR)};
+          </script>`,
       );
-      template = templateHtml
-      // @ts-ignore
-      render = (await import("../../dist/server/entry-server.js")).render;
+      console.log(templateHtml.search(/<!--\s*title\s*-->/));
+      template = templateHtml;
+      render = // @ts-ignore
+      (await import("../../dist/server/entry-server.js")).render;
     }
-
     let didError = false;
 
     const { pipe, abort } = render(url, AppSSR, {

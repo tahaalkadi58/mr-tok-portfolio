@@ -38,7 +38,7 @@ export default function Button({
       }}
       onClick={onClick}
     >
-       {children ? <i className={children as string}></i> : ""}
+      {children ? <i className={children as string}></i> : ""}
     </button>
   );
 }

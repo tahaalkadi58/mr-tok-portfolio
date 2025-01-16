@@ -47,13 +47,13 @@ const Services: FunctionComponent = () => {
       <Overlay
         styles={{
           backgroundColor: "#333",
-          opacity: '0.3'
+          opacity: "0.3",
         }}
       ></Overlay>
       <Overlay
         styles={{
           background: `linear-gradient(-45deg, ${background_linear[activeTab]["second-color"]} 1%,  #333)`,
-          opacity: '0.2'
+          opacity: "0.2",
         }}
       ></Overlay>
       <p className="section-description">
