@@ -1,4 +1,3 @@
-import React from "react";
 import { Class_List_Item } from "client/utils/Class_list_item";
 
 export default function ExternalLink() {

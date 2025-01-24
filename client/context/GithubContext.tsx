@@ -5,7 +5,6 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { string } from "three/tsl";
 
 export const RepoContext = createContext<{
   repos: any[];

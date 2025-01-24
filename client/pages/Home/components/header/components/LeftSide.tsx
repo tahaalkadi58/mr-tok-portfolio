@@ -1,5 +1,3 @@
-import React from "react";
-// استيراد الصور
 import designFeather from "client/assets/photos/design_feather.png";
 import designTv from "client/assets/photos/design_tv.png";
 import penDesign from "client/assets/photos/pen_design.png";

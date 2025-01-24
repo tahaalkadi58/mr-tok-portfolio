@@ -807,26 +807,12 @@ section.testimonials {
 		width: 45px;
 	}
 }
-.tok {
-	-webkit-mask: url('../assets/photos/tok.svg') center /
-		cover no-repeat;
-	mask: url('../assets/photos/tok.svg') center / contain
-		no-repeat;
-	background-image: conic-gradient(
-		from 60deg,
-		#20df25,
-		#1c5ecb,
-		#ff0101
-	);
-}
+
 
 .nav-container.show .logo-container {
 	display: flex;
 }
-.wrap {
-	color: white;
-	font-size: inherit;
-}
+
 
 /* 
 
